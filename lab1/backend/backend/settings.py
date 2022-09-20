@@ -128,3 +128,6 @@ MEDIA_URL = '/media/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = 'myStore.User'
+
+LOGIN_URL = "/login/"
+LOGIN_REDIRECT_URL = "/" # redirect to homepage after login

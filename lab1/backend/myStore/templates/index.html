@@ -7,10 +7,9 @@
     <h1>Hello</h1>
     <ul>
         {% for p in products  %}
-            <li>{{ p.name }} - €{{p.price}} - {{p.description}}</li>
-            
-             <a href="/products/{{p.id}}">
-                 <img src="{{p.image.url}}" />
+            <li>{{ p.name }} - €{{p.price}} - {{p.description}} - {{p.image.url}}</li>
+            <a href="/products/{{p.id}}">
+                {{ p.name }}
             </a>
         {% endfor %}
     </ul>
