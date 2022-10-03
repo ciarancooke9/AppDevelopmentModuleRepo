@@ -21,6 +21,7 @@ class BasketItems(models.Model):
     id = models.AutoField(primary_key=True)
     basket_id = models.ForeignKey(Basket, on_delete=models.CASCADE)
     product_id = models.ForeignKey(Product, on_delete=models.CASCADE)
+    price = models.DecimalField(max_digits=6, decimal_places=2, default=0.0)
     quantity = models.IntegerField(default=1)
 
 class Order(models.Model):
@@ -29,3 +30,4 @@ class Order(models.Model):
     basket_id = models.ForeignKey(Basket, on_delete=models.CASCADE)
     user_id = models.ForeignKey(User, on_delete=models.CASCADE)
     total_price = models.DecimalField(max_digits=6, decimal_places=2, default=0.0)
+    shipping_addr = models.TextField(default="")
