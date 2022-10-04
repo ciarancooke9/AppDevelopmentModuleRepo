@@ -23,6 +23,7 @@ class BasketItems(models.Model):
     product_id = models.ForeignKey(Product, on_delete=models.CASCADE)
     price = models.DecimalField(max_digits=6, decimal_places=2, default=0.0)
     quantity = models.IntegerField(default=1)
+    imageurl = models.CharField(max_length=200, null=True)
 
 class Order(models.Model):
     id = models.AutoField(primary_key=True)

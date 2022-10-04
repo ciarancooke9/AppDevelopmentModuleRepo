@@ -58,11 +58,11 @@ def add_to_basket(request, prodid):
         basket = Basket.objects.filter(user_id=user, is_active=True).first()
     # get the product 
     product = Product.objects.get(id=prodid)
-    sbi = BasketItems.objects.filter(basket_id=basket, product_id = product).first()
+    sbi = BasketItems.objects.filter(basket_id=basket, product_id = product.id).first()
     if sbi is None:
         # there is no basket item for that product 
         # create one 
-        sbi = BasketItems(basket_id=basket, product_id = product)
+        sbi = BasketItems(basket_id=basket, product_id = product, price = product.price, imageurl = product.product_image.url)
         sbi.save()
     else:
         # a basket item already exists 
