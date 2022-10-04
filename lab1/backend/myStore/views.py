@@ -124,7 +124,7 @@ def order(request):
             order.basket_id = basket
             total = 0.0
             for item in sbi:
-                total += float(item.price())
+                total += float(item.price)
             order.total_price = total
             order.save()
             basket.is_active = False
